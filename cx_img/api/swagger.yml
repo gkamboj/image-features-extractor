@@ -1,0 +1,46 @@
+# swagger.yml
+
+openapi: 3.0.0
+info:
+  title: "Image object detection"
+  description: "APIs for detecting objects in images and extracting their features"
+  version: "1.0.0"
+
+servers:
+  - url: "/api"
+
+paths:
+  /image/classification:
+    post:
+      operationId: "cx_img.api.image_operations.detection_and_classification"
+      tags:
+        - Image operations
+      summary: "Detect object in an image and extract its attributes"
+      requestBody:
+        description: "Image to be analysed"
+        required: True
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                image:
+                  type: string
+                  format: binary
+                  description: "Image to be analysed, supported formats: JPG, PNG, and TIFF."
+      responses:
+        "200":
+          description: "Successfully extracted the object details from image"
+
+  /training/color-classification:
+    post:
+      operationId: "cx_img.api.trainings.color_classification"
+      tags:
+        - Training
+        - Color classification
+      summary: "Prepare training dataset for color classification from RGB to color name"
+      responses:
+        "200":
+          description: "Successfully created the dataset"
+        "500":
+          description: "Creation of dataset failed due to an internal error"

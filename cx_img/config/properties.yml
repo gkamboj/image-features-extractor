@@ -1,0 +1,36 @@
+operation:
+  object_detection:
+    active: True
+    model:
+      resnet50:
+        active: True
+        confidence_diff_threshold: 0.05
+  color_recognition:
+    active: True
+    model:
+      grab_cut:
+        active: True
+        color:
+          active:
+            beige: True
+            black: True
+            blue: True
+            brown: True
+            cream: True
+            green: True
+            grey: True
+            orange: True
+            pink: True
+            purple: True
+            red: True
+            turquoise: True
+            white: True
+            yellow: True
+  trainings:
+    color_classification:
+      training_dataset: 'training.data'
+      nearest_neighbors_to_consider: 3
+
+
+app:
+  port: 5002
