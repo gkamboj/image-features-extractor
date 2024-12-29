@@ -63,29 +63,33 @@ The application does not include a user interface (UI) but provides two APIs tha
 ## Demo and Screenshots
 Here are some screenshots showcasing working deployments of the application.
 - _Image Classification_ API and sample response:
-  <img width="1037" alt="image" src="https://github.com/user-attachments/assets/e020b0dd-ce9e-4bd7-aa6c-a912339676e9" />
-  ```
-  {
-    "result": {
-        "attributes": {
-            "color": {
-                "name": [
-                    "black"
-                ],
-                "rgb": "46,46,46"
-            }
-        },
-        "detection": [
-            {
-                "confidence": "0.96429",
-                "model": "resnet50",
-                "name": "running_shoe"
-            }
-        ]
-    },
-    "success": true
-  }
-  ```
+   - Postman:
+     <img width="1037" alt="image" src="https://github.com/user-attachments/assets/e020b0dd-ce9e-4bd7-aa6c-a912339676e9" />
+   - Sample input image:
+     ![AirMax270](https://github.com/user-attachments/assets/9a9d70c2-e333-4dc9-b806-f5c15497845e)
+   - Response corresponding to the sample input image:
+     ```
+     {
+       "result": {
+           "attributes": {
+               "color": {
+                   "name": [
+                       "black"
+                   ],
+                   "rgb": "46,46,46"
+               }
+           },
+           "detection": [
+               {
+                   "confidence": "0.96429",
+                   "model": "resnet50",
+                   "name": "running_shoe"
+               }
+           ]
+       },
+       "success": true
+     }
+     ```
 
 - Swagger UI:
   <img width="1625" alt="image" src="https://github.com/user-attachments/assets/7dcc1daa-9070-40bd-9183-f03c617b82ee" />
